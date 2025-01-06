@@ -1,6 +1,4 @@
 #![allow(warnings)]
-use std::os::unix::process::parent_id;
-
 use nom::{
     bytes::complete::tag,
     character::complete::{self, anychar},
