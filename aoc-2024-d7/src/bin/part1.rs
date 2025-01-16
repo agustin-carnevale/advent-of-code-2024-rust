@@ -12,14 +12,6 @@ use nom::{
 
 use itertools::Itertools;
 
-// fn token(input: Span) -> IResult<Span, (IVec2, char)> {
-//     let y = input.location_line() as i32 - 1;
-//     let x = input.get_column() as i32 - 1;
-//     let (input, token) = one_of(".#^")(input)?;
-
-//     Ok((input, (IVec2::new(x, y), token)))
-// }
-
 fn parse(input: &str) -> IResult<&str, Vec<(u64, Vec<u64>)>> {
     let (input, equations) = separated_list1(
         line_ending,
